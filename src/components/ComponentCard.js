@@ -60,7 +60,7 @@ const ComponentCard = () => {
         </div>
       )}
       {!isVisible && (
-        <div className="flex justify-center mt-36">
+        <div className="flex justify-center mt-40">
           <div className="flex flex-col items-center">
             <p className="mb-2 text-3xl font-bold text-purple-900 drop-shadow-xl">
               ¡Yupiiii!
