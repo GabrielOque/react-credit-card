@@ -38,7 +38,7 @@ const ComponentCard = () => {
     }, 1700);
   };
 
-  const cardClasses = "mt-12" + (isAnimating ? " animate-bounce h-96" : "");
+  const cardClasses = "mt-16" + (isAnimating ? " animate-bounce h-96" : "");
 
   return (
     <>
@@ -80,7 +80,7 @@ const ComponentCard = () => {
         <div className="absolute w-full bg-white md:w-3/5 top-36 -z-50 drop-shadow-2xl lg:w-1/3">
           <div className="h-40"></div>
           <div className="flex justify-center w-full">
-            <form className="w-2/3">
+            <form className="w-2/3 mt-3">
               <label className="font-sans">Number Card</label>
               <input
                 autoComplete="off"
