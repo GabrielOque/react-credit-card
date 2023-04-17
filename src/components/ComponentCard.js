@@ -14,8 +14,6 @@ const ComponentCard = () => {
     number: "",
   });
 
-  const dateInput = useRef("");
-
   const handleInputChange = (e) => {
     setChangeCard({ ...changeCard, [e.target.name]: e.target.value });
   };
@@ -27,8 +25,11 @@ const ComponentCard = () => {
     }));
   };
   const handleInputChangeDate = (e) => {
-    dateInput.current = dateInput.current + e.target.value;
-    setChangeCard({ ...changeCard, expiry: dateInput.current });
+    //dateInput.current = dateInput.current + e.target.value;
+    setChangeCard({
+      ...changeCard,
+      expiry: changeCard.expiry + e.target.value,
+    });
   };
 
   const handleAnimateButtonClick = () => {
