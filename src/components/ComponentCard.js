@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import ReactCreditCard from "react-credit-cards";
 import celebration from "../images/celebration.png";
 
@@ -25,7 +25,6 @@ const ComponentCard = () => {
     }));
   };
   const handleInputChangeDate = (e) => {
-    //dateInput.current = dateInput.current + e.target.value;
     setChangeCard({
       ...changeCard,
       expiry: changeCard.expiry + e.target.value,
@@ -33,6 +32,18 @@ const ComponentCard = () => {
   };
 
   const handleAnimateButtonClick = () => {
+    document.getElementById("number").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("month").value = "Month";
+    document.getElementById("year").value = "Year";
+    document.getElementById("cvc").value = "";
+    setChangeCard({
+      cvc: "",
+      expiry: "",
+      focus: "",
+      name: "",
+      number: "",
+    });
     setIsAnimating(!isAnimating);
     setTimeout(() => {
       setIsVisible(!isVisible);
@@ -87,6 +98,7 @@ const ComponentCard = () => {
                 autoComplete="off"
                 type="text"
                 name="number"
+                id="number"
                 placeholder="Card Number"
                 maxLength="16"
                 className="w-full h-8 px-1 mb-5 border-2 border-gray-200 rounded-lg "
@@ -98,6 +110,7 @@ const ComponentCard = () => {
                 autoComplete="off"
                 type="text"
                 name="name"
+                id="name"
                 placeholder="Add name"
                 className="w-full h-8 px-1 mb-5 border-2 border-gray-200 rounded-lg "
                 onChange={handleInputChange}
@@ -156,6 +169,7 @@ const ComponentCard = () => {
                   <input
                     type="text"
                     name="cvc"
+                    id="cvc"
                     maxLength="3"
                     placeholder="cvc"
                     className="w-full h-8 px-1 mb-5 border-2 border-gray-200 rounded-lg "
